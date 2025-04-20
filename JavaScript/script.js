@@ -17,8 +17,9 @@ function formatSecondsToMinutes(seconds) {
 async function getsongs(folder) {
 
     crrfolder = folder;
-    let a = await fetch(`/${folder}/`)
-    let response = await a.text()
+    let a = await fetch(`/${folder}/info.json`)
+    let response = await a.json()
+    songs = response.songs
     let div = document.createElement("div")
     div.innerHTML = response;
     let as = div.getElementsByTagName("a")
@@ -76,8 +77,8 @@ const playMusic = (track, pause = false) => {
 }
 
 async function Displayalbum() {
-    let a = await fetch("/songs/")
-    let response = await a.text();
+    let a = await fetch("/songs/album.json")
+    let response = await a.json();
 
     let div = document.createElement("div")
     div.innerHTML = response;
