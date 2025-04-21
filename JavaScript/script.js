@@ -17,7 +17,7 @@ function formatSecondsToMinutes(seconds) {
 async function getsongs(folder) {
     crrfolder = folder;
 
-    let a = await fetch(`/songss/${folder}/info.json`);
+    let a = await fetch(`/songs/${folder}/info.json`);
     let response = await a.json();
     songs = response.songs;
 
