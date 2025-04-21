@@ -14,8 +14,8 @@ function formatSecondsToMinutes(seconds) {
 }
 
 // get the songs from the folder 
-async function getsongs(folder) {
-    crrfolder = folder;
+async function getsongs(mitraz) {
+    crrfolder = mitraz;
 
    let a = await fetch("/songs/mitraz/info.json")
 
