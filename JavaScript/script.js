@@ -54,7 +54,7 @@ async function getsongs(folder) {
 
 const playMusic = (track, pause = false) => {
     // let audio = new Audio("/songs/" + track)
-    Cureentsong.src = `/${crrfolder}/` + track
+    Cureentsong.src = "/mitraz/" + track
     if (!pause) {
 
         Cureentsong.play();
@@ -81,7 +81,7 @@ async function Displayalbum() {
                     <polygon points="9.36,7.32 17.68,12.48 9.36,17.68" fill="black" />
                 </svg>
             </div>
-            <img src="/songs/${folder}/Cover.jpg" alt="">
+            <img src="/songs/mitraz/Cover.jpg" alt="">
             <h2>${response.title}</h2>
             <p>${response.description}</p>
         </div>`;
@@ -103,7 +103,7 @@ async function main() {
 
 
     // get the list of all the songs 
-    await getsongs("songs/demo")
+    await getsongs("songs/mitraz")
     console.log(songs)
 
     playMusic(songs[0], true)
